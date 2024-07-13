@@ -1,0 +1,52 @@
+@extends('voyager::master')
+
+@section('page_title', __('voyager.generic.add_new').' Customer')
+
+@section('content')
+<div class="page-content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-bordered">
+                <div class="panel-body">
+                    <form action="{{ route('voyager.customers.store') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="first_name">First Name</label>
+                            <input type="text" class="form-control" name="first_name" id="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" class="form-control" name="last_name" id="last_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone_number">Phone Number</label>
+                            <input type="text" class="form-control" name="phone_number" id="phone_number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" name="address" id="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date_of_birth">Date of Birth</label>
+                            <input type="date" class="form-control" name="date_of_birth" id="date_of_birth" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select class="form-control" name="gender" id="gender" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
